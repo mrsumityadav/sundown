@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,body{width: 100%;height: 100%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        
+        .main{
+            width: 100%;
+            height: 150vh;
+            background: rgb(209, 209, 209);
+            padding: 10vw 2vw;
+        }
+
+        .main .elem{
+            width: 100%;
+            height: 150px;
+            background: #FF9831;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            border-bottom: 1px solid black;
+        }
+        .fix{
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            background: rgba(0, 255, 255, 0.352);
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="fix"></div>
+    <div class="main">
+        <div class="elem" data-img="https://images.unsplash.com/photo-1717496376319-ee3d354ac2d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8eEh4WVRNSExnT2N8fGVufDB8fHx8fA%3D%3D">01</div>
+        <div class="elem" data-img="https://images.unsplash.com/photo-1717241748649-bbb03f255590?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D">02</div>
+        <div class="elem" data-img="https://images.unsplash.com/photo-1717244904621-276c3d62dcf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D">03</div>
+        <div class="elem" data-img="https://images.unsplash.com/photo-1717147507202-d0be928e3b7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D">04</div>
+        <div class="elem" data-img="https://images.unsplash.com/photo-1717471303258-1aa6b9d58dab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8eEh4WVRNSExnT2N8fGVufDB8fHx8fA%3D%3D">05</div>
+    </div>
+
+    <script>
+
+        var fix = document.querySelector('.fix')
+        document.querySelectorAll('.elem').forEach(function(e){
+            e.addEventListener('mouseenter', function(){
+                var img = e.getAttribute('data-img')
+                fix.style.backgroundImage = `url(${img})` 
+                
+            })
+        })
+
+    </script>
+
+</body>
+</html>
